@@ -52,6 +52,18 @@ var employees = [
 
 //Code Here
 
+let employeeUpdater = () => employees.map((e) => {
+  if (e.firstName === 'Theo') {
+    delete e;
+  }
+  if (e.firstName === 'Lorie') {
+    e.department = 'HR';
+    return e;
+  }
+  return employees;
+})
+
+console.log(employeeUpdater());
 
 
 ////////// PROBLEM 2 //////////
@@ -69,7 +81,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+function removeDuplicates (arr){
+  for(var i=0;i<arr.length ;i++){
+    for(var j=i+1;j<arr.length; j++){
+      if(arr[i]==arr[j]){
+        arr.splice(i,1);
+        i--;
+      }
+    }
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 3 //////////
